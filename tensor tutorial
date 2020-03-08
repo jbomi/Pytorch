@@ -23,7 +23,8 @@ print(x)
 x=x.new_ones(5,3,dtype=torch.double)
 x=torch.ones(5,3,dtype=torch.double)
 
-#override dtype, 앞선 텐서 가져오기(행렬 사이즈 적을 필요 없음)
+#override dtype: _like
+##override dtype, 앞선 텐서 가져오기(행렬 사이즈 적을 필요 없음)
 x=torch.randn_like(x,dtype=torch.float)
 
 #get its size
@@ -31,6 +32,16 @@ print(x.size())
 
 #tensor의 입력 dtype 가져오기
 print(x.dtype())
+
+#Operation
+
+##addition: syntax 1
+y=torch.rand(5,3)
+print(x+y)
+
+##addtion: syntax 2
+print(torch.add(x,y))
+
 
 
 
