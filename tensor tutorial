@@ -1,0 +1,39 @@
+%matplotlib inline
+
+from __future__ import print_function
+import torch
+
+# construct a 5*3 matrix, uninitialized, 초기화 X
+x=torch.empty(5,3)
+print(x)
+
+#construct a randomly initialized matrix, 초기화, 무작위
+x=torch.rand(5,3)
+print(x)
+
+# filled zeros, and dtype is long
+x=torch.zeros(5,3,dtype=torch.long)
+print(x)
+
+#tensor directly from data, 텐서 input 직접 생성
+x=torch.tensor([5,77])
+print(x)
+
+# filled with 1, dtype is double, dtype은 int,long,float,double 모두 가능 
+x=x.new_ones(5,3,dtype=torch.double)
+x=torch.ones(5,3,dtype=torch.double)
+
+#override dtype, 앞선 텐서 가져오기(행렬 사이즈 적을 필요 없음)
+x=torch.randn_like(x,dtype=torch.float)
+
+#get its size
+print(x.size())
+
+#tensor의 입력 dtype 가져오기
+print(x.dtype())
+
+
+
+
+
+
